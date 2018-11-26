@@ -1,0 +1,19 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -f Dockerfile.integration .
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-east-2"
+#   app: "entrx"
+#   env: "Entrx-env"
+#   bucket_name: "elasticbeanstalk-us-east-2-050842946957"
+#   bucket_path: "entrx"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
