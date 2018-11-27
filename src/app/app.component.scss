@@ -5,29 +5,39 @@
   height: 100%;
 }
 
-/*mat-sidenav-container {
+mat-sidenav-container {
   height: 100%;
 }
 
 mat-sidenav {
   border-left: solid 1px mat-color($nga-foreground, divider);
   padding: 24px;
-}*/
-
-.toolbar {
-  background-color: mat-color($nga-background, card);
-  position: relative;
-
-  // This adds a bottom border. On the home page the tabs are rendered on top of the
-  // shadow this makes the header look like a single component. On other pages, the
-  // shadow is visible, so it separates header from the content.
-  box-shadow: 0 1px mat-color($nga-foreground, divider);
+  width: 200px;
 }
 
-.toolbar__logo-title-group {
+.app-container {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  right: 50%;
-  left: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-is-mobile .app-toolbar {
+  background-color: mat-color($nga-background, card);
+  box-shadow: 0 1px mat-color($nga-foreground, divider);
+  position: fixed;
+  z-index: 2;
+}
+
+.app-sidenav-container {
+  flex: 1;
+}
+
+.app-is-mobile .app-sidenav-container {
+  flex: 1 0 auto;
 }
 
 .toolbar__logo {
@@ -46,6 +56,10 @@ mat-sidenav {
   color: mat-color($nga-foreground, icon);
 }
 
-.toolbar__shopping-cart-button {
+.toolbar__profile-button {
   margin-right: 8px;
 }
+
+
+
+

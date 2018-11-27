@@ -1,20 +1,31 @@
-<mat-toolbar class="toolbar">
-  <button class="toolbar__icon-button" mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <div class="toolbar__logo-title-group" fxLayout fxLayoutAlign="center center">
-    <a routerLink="/" fxLayout>
-      <img class="toolbar__logo" src="/assets/logo.svg" alt="Auto-Stoc Logo">
+<div class="app-container">
+  <mat-toolbar fxLayoutGap="8px" class="app-toolbar"
+    [class.app-is-mobile]="media.isActive('xs')">
+    <button *ngIf="displayAccountIcons" mat-icon-button class="toolbar__icon-button" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a mat-icon-button routerLink="/home">
+      <!-- <mat-icon class="toolbar__logo" svgIcon="logo"></mat-icon> -->
+      <img class="toolbar__logo" src="/assets/img/icons/logo.svg" alt="Auto-Stoc Logo">
+      <span class="mat-h2 toolbar__title">Auto-Stoc</span>
     </a>
-    <a class="toolbar__title" routerLink="/">Auto-Stoc</a>
-  </div>
-
-  <div fxFlex></div>
-
-  <button mat-icon-button class="toolbar__icon-button toolbar__shopping-cart-button">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
-</mat-toolbar>
-
-<router-outlet></router-outlet>
+    <span class="flex-spacer"></span>
+    <button *ngIf="displayAccountIcons" mat-icon-button routerLink="/user/profile"
+      matTooltip="Profile" aria-label="User Profile" class="toolbar__icon-button">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button *ngIf="displayAccountIcons" mat-icon-button routerLink="/user/logout" matTooltip="Logout"
+      aria-label="Logout" class="toolbar__icon-button">
+      <mat-icon>lock_open</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="media.isActive('xs') ? 56 : 0">
+    <mat-sidenav #sidenav [mode]="media.isActive('xs') ? 'over' : 'side'"
+      [fixedInViewport]="media.isActive('xs')" fixedTopGap="56">
+      <!-- <app-navigation-menu></app-navigation-menu> -->
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet class="app-container"></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
