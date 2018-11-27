@@ -5,7 +5,7 @@ export class AppPage {
     return browser.get('/')
   }
 
-  getTitleText() {
-    return element(by.css('nga-root h1')).getText()
+  getParagraphText() {
+    return element(by.css('nga-root mat-toolbar .mat-h2')).getText()
   }
 }

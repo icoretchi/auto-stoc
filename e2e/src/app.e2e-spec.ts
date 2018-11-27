@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo()
-    expect(page.getTitleText()).toEqual('Welcome to auto-stoc!')
+    expect(page.getParagraphText()).toEqual('Auto-Stoc')
   })
 })
