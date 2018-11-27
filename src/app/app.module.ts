@@ -11,7 +11,6 @@ import { HomeComponent } from './home/home.component'
 import { InventoryModule } from './inventory/inventory.module'
 import { ManagerModule } from './manager/manager.module'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-import { UserModule } from './user/user.module'
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PageNotFoundComponent],
@@ -23,7 +22,6 @@ import { UserModule } from './user/user.module'
     AppMaterialModule,
     ManagerModule,
     InventoryModule,
-    UserModule,
     HttpClientModule,
   ],
   providers: [],
