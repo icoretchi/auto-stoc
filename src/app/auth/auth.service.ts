@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
+import { AngularFireAuth } from '@angular/fire/auth'
 import { sign } from 'fake-jwt-sign'
 import * as decode from 'jwt-decode'
 import { BehaviorSubject, Observable, of, throwError as observableThrowError } from 'rxjs'
@@ -44,7 +45,7 @@ export class AuthService extends CacheService implements IAuthService {
     password: string
   ) => Observable<IServerAuthResponse>
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private angularFireAuth: AngularFireAuth) {
     super()
     this.authStatus.subscribe(authStatus => this.setItem('authStatus', authStatus))
     // Fake login function to simulate roles
@@ -81,6 +82,10 @@ export class AuthService extends CacheService implements IAuthService {
     } as IServerAuthResponse
 
     return of(authResponse)
+  }
+
+  public signup(email: string, password: string) {
+    return this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
   }
 
   login(email: string, password: string): Observable<IAuthStatus> {
