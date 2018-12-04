@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
   firebase: {
-    apiKey: 'AIzaSyAwzE65sx8YwOposVXUvdYWtXZctEd1SV4',
+    apiKey: '',
     authDomain: 'auto-stoc-1234.firebaseapp.com',
     databaseURL: 'https://auto-stoc-1234.firebaseio.com',
     projectId: 'auto-stoc-1234',
