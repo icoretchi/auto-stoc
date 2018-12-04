@@ -6,12 +6,12 @@ export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
   firebase: {
-    apiKey: 'AIzaSyD-G9eagMfIX6ZbBRs4XFvRN31DbhzZIs8',
-    authDomain: 'auto-stoc-prod.firebaseapp.com',
-    databaseURL: 'https://auto-stoc-prod.firebaseio.com',
-    projectId: 'auto-stoc-prod',
-    storageBucket: 'auto-stoc-prod.appspot.com',
-    messagingSenderId: '526452812982',
+    apiKey: 'AIzaSyAwzE65sx8YwOposVXUvdYWtXZctEd1SV4',
+    authDomain: 'auto-stoc-1234.firebaseapp.com',
+    databaseURL: 'https://auto-stoc-1234.firebaseio.com',
+    projectId: 'auto-stoc-1234',
+    storageBucket: 'auto-stoc-1234.appspot.com',
+    messagingSenderId: '772082306052',
   },
 }
 
